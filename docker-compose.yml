@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  musicDb:
+    image: mysql:8.0.30
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Thisisapassword
+      MYSQL_USER: Jimmy
+      MYSQL_PASSWORD: Thisisapersonalpassword
+      MYSQL_DATABASE: musicDb
+    ports:
+      - "3306:3306"
+    volumes:
+      - myvolume:/var/lib/mysql
+
+volumes:
+  myvolume:
+
