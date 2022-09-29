@@ -7,12 +7,21 @@ import javax.persistence.Id;
 
 @Entity
 public class MusicInstrument {
+    private String name;
     private String orchestraGroup;
     private Boolean hasStrings;
     private int numberInOrchestra;
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getOrchestraGroup() {
         return orchestraGroup;
