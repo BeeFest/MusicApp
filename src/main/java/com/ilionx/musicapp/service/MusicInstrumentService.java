@@ -28,10 +28,6 @@ public class MusicInstrumentService {
         return savedInstrument;
     }
 
-    public Optional<MusicInstrument> findById(Long aLong) {
-        return musicInstrumentRepository.findById(aLong);
-    }
-
     public long count() {
         return musicInstrumentRepository.count();
     }
@@ -42,6 +38,14 @@ public class MusicInstrumentService {
 
     public void delete(MusicInstrument entity) {
         musicInstrumentRepository.delete(entity);
+    }
+
+    public Optional<MusicInstrument> findById(Long aLong) {
+        return musicInstrumentRepository.findById(aLong);
+    }
+
+    public List<MusicInstrument> findByOrchestragroup(String orchestraGroup){
+        return musicInstrumentRepository.findByOrchestraGroup(orchestraGroup);
     }
 
     public Optional<MusicInstrument> updateById(@PathVariable long id, @RequestBody MusicInstrument source) {
