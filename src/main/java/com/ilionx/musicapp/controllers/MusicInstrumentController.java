@@ -32,7 +32,7 @@ public class MusicInstrumentController {
     @PostMapping
     public ResponseEntity<MusicInstrument> create(@RequestBody MusicInstrument musicInstrument) throws URISyntaxException {
         MusicInstrument result = this.musicInstrumentService.save(musicInstrument);
-        return ResponseEntity.created(new URI("api/musicinstruments/" +result.getId())).build();
+        return ResponseEntity.created(new URI("api/musicinstruments/" +result.getId())).body(result);
     }
     @PutMapping("{id}")
     public ResponseEntity<MusicInstrument> updateById(@PathVariable long id, @RequestBody MusicInstrument source) {
